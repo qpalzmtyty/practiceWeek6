@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>First Half of Text</title>
+</head>
+<body>
+<h2>Enter your text</h2>
+<form>
+  <label for="num1">Your text:</label>
+  <input type="text" id="num1" name="num1">
+  <br><br>
+  <button type="button" onclick="firstHalfOfTheText()">Show result</button>
+</form>
+<p>The Result Is: <span id="result"></span></p>
+
+<script>
+  function firstHalfOfTheText() {
+    const text = document.getElementById('num1').value;
+    const length = text.length;
+
+    if (length % 2 === 0) {
+      const halfLength = length / 2;
+      document.getElementById('result').textContent = text.substring(0, halfLength);
+    }
+    else {
+      document.getElementById('result').textContent = document.getElementById('num1').value;
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h2>Enter your numbers</h2>
+<form>
+  <label for="num1">1st Number:</label>
+  <input type="number" id="num1" name="num1">
+  <br><br>
+  <label for="num2">2nd Number:</label>
+  <input type="number" id="num2" name="num2">
+  <br><br>
+  <button type="button" onclick="closestTo100()">Show result</button>
+</form>
+<p>The Result Is: <span id="result"></span></p>
+
+<script>
+  function closestTo100() {
+    const num1 = parseFloat(document.getElementById('num1').value);
+    const num2 = parseFloat(document.getElementById('num2').value);
+    let result;
+    if (num1 == num2) { result = "False" }
+    else if (100 - num1 > 100 - num2) { result = num2 }
+    else { result = num1 }
+    document.getElementById('result').textContent = result;
+  }
+</script>
+</body>
+</html>
